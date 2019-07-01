@@ -6,45 +6,67 @@ using System.Threading.Tasks;
 
 namespace Ejercicios_con_Arrays
 {
+
+
     class Program
     {
-        public int k = 0, sumapos = 0;
+       
+        public List<string> Alimentos = new List<string>();
 
-        public string EliminarEspacios(string nombre, int[] posicion)
+        void Lista(List<string> Al)
         {
+            Al.Add("Huevo");
+            Al.Add("Leche");
+            Al.Add("Pollo");
 
-            foreach (var i in nombre)
-            {
-                k += 1;
-                if (i == ' ')
-                {
-                    int j = 0;
-                    posicion[j] = k;
-                    j++;
-                }
-                
-            }
-
-            for (int j = 0; j > posicion.Length; j++)
-            {
-               sumapos = posicion[j];
-            }
-
-            return sumapos.ToString();
         }
-
+        
     
         static void Main(string[] args)
         {
-          
-             int[] lista = { 1, 2, 3, 4, 5, 6, 7 };
-            string name = "VOY AL BAÑO Y YA VUELVO";
-            int[] Posición = new int[name.Length];
+
+            int n = 0,contenedor=10^6, cont = 0; ;
             
+            Console.WriteLine("Digite la cantidad de números que quiere comparar");
+            
+            n = Convert.ToInt32(Console.ReadLine()); 
+          
+           
+ 
+       
+            int[] numeros = new int[n];
 
-            EliminarEspacios(name, Posición[]);
+            for (int i = 0; i < numeros.Length; i++)
+            {
+                Console.WriteLine($"Digite un número N[{i}] ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                numeros[i] = num;
+            }
 
+            for (int j = 0; j < numeros.Length; j++)
+            {
+                if (contenedor > numeros[j])
+                {
+                    contenedor = numeros[j];
+                }
+            }
+
+            for (int k = 0; k < numeros.Length; k++)
+            {
+                if (contenedor == numeros[k])
+                {
+                    cont += 1;
+                }
+            }
+            Console.WriteLine($"El número menor es: {contenedor}");
+
+            if (cont >1)
+            { Console.WriteLine("El número menor se repite"); }
         }
-        }
+
+
+
+
     }
+}
 
